@@ -22,13 +22,7 @@ class _SplashviewbodyState extends State<Splashviewbody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.fade,
-        duration: kTransitionDuraion,
-      );
-    });
+    navigateToHomeView();
   }
 
   void disposw() {
@@ -62,5 +56,15 @@ class _SplashviewbodyState extends State<Splashviewbody>
       end: Offset.zero,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  void navigateToHomeView() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: kTransitionDuraion,
+      );
+    });
   }
 }
