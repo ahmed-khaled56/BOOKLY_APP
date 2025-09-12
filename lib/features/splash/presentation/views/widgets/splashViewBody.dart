@@ -28,6 +28,11 @@ class _SplashviewbodyState extends State<Splashviewbody>
     animationController.forward();
   }
 
+  void disposw() {
+    super.dispose();
+    animationController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
