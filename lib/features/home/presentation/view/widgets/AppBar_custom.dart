@@ -10,12 +10,12 @@ class AppbarCustom extends StatelessWidget {
       width: double.infinity,
       height: 100,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           children: [
             Image.asset(width: 60, height: 60, AssetsData.logo),
             Spacer(),
-            Icon(Icons.search),
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
           ],
         ),
       ),
