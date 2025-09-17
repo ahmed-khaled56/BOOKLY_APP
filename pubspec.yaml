@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.7.2
+  google_fonts: ^6.3.1
   material_symbols_icons: ^4.2873.0
 
 dev_dependencies:
