@@ -11,10 +11,9 @@ class BestSellerListviewItem extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
+          width: 90,
+          height: MediaQuery.of(context).size.height * .2,
           child: Container(
-            height: 140,
-            width: 90,
-
             decoration: BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.circular(15),
@@ -26,7 +25,7 @@ class BestSellerListviewItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 16),
+          padding: const EdgeInsets.only(left: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +41,7 @@ class BestSellerListviewItem extends StatelessWidget {
                   FaIcon(FontAwesomeIcons.euroSign, size: 12),
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 50.0),
+                    padding: const EdgeInsets.only(left: 42.0),
                     child: FaIcon(
                       FontAwesomeIcons.solidStar,
                       size: 12,
@@ -50,9 +49,9 @@ class BestSellerListviewItem extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(width: 3),
+                  const SizedBox(width: 4),
                   Text("4.5 ", style: Styles.rate),
-                  const SizedBox(width: 2),
+                  const SizedBox(width: 1),
                   Text("(23323) ", style: Styles.downloadNumber),
                 ],
               ),
