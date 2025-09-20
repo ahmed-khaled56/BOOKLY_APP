@@ -30,7 +30,16 @@ class BestSellerListviewItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('The Jungle Book', style: Styles.TextStyle30),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .3,
+                child: Text(
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+
+                  'The Jungle Book',
+                  style: Styles.TextStyle30,
+                ),
+              ),
 
               Text('Rudyard Kipling', style: Styles.TextStyle12),
 
