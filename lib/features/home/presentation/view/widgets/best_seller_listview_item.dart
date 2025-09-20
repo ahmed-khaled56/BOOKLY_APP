@@ -30,13 +30,13 @@ class BestSellerListviewItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('The Jungle Book', style: Styles.Bookname),
+              Text('The Jungle Book', style: Styles.TextStyle30),
 
-              Text('Rudyard Kipling', style: Styles.AutherName),
+              Text('Rudyard Kipling', style: Styles.TextStyle12),
 
               Row(
                 children: [
-                  Text("19.5 ", style: Styles.priceStyle),
+                  Text("19.5 ", style: Styles.TextStyle30),
 
                   FaIcon(FontAwesomeIcons.euroSign, size: 12),
 
@@ -50,9 +50,12 @@ class BestSellerListviewItem extends StatelessWidget {
                   ),
 
                   const SizedBox(width: 4),
-                  Text("4.5 ", style: Styles.rate),
+                  Text("4.5 ", style: Styles.TextStyle15),
                   const SizedBox(width: 1),
-                  Text("(23323) ", style: Styles.downloadNumber),
+                  Text(
+                    "(23323) ",
+                    style: Styles.TextStyle15.copyWith(color: Colors.grey),
+                  ),
                 ],
               ),
             ],
