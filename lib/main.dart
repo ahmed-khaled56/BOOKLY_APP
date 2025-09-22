@@ -15,12 +15,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      routes: {
-        BooksDetailsView.id: (context) => BooksDetailsView(),
-
-        Splashview.id: (context) => Splashview(),
-      },
-
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
 
@@ -28,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      initialRoute: Splashview.id,
+      home: Splashview(),
     );
   }
 }
