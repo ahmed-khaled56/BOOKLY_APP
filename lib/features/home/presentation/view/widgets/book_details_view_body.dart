@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/Books_action.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Custom_appbar_details.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -50,46 +51,7 @@ class BookDetailsViewBody extends StatelessWidget {
         SizedBox(height: 8),
         BookRating(mainAxisAlignment: MainAxisAlignment.center),
         const SizedBox(height: 30),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 130,
-              height: 35,
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  topLeft: Radius.circular(10),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  "19.99€",
-                  style: Styles.TextStyle12.copyWith(color: Colors.black),
-                ),
-              ),
-            ),
-            Container(
-              width: 130,
-              height: 35,
-              decoration: BoxDecoration(
-                color: Colors.red.shade300,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  "Free povider",
-                  style: Styles.TextStyle11.copyWith(color: Colors.white),
-                ),
-              ),
-            ),
-          ],
-        ),
+        BooksAction(),
       ],
     );
   }
