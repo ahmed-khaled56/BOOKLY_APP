@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(child: AppbarCustom()),
+          SliverToBoxAdapter(child: AppbarCustom(icon: Icons.search)),
           SliverToBoxAdapter(child: BooksListview()),
           SliverToBoxAdapter(
             child: Padding(

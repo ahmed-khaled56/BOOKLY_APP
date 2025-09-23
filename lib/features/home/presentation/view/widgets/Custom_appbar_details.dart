@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/assets.dart';
 
-class AppbarCustom extends StatelessWidget {
-  const AppbarCustom({super.key, required this.icon});
-  final IconData? icon;
+class CustomAppbarDetails extends StatelessWidget {
+  const CustomAppbarDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +13,12 @@ class AppbarCustom extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           children: [
-            Image.asset(width: 60, height: 60, AssetsData.logo),
+            IconButton(onPressed: () {}, icon: Icon(Icons.close)),
             Spacer(),
-            IconButton(onPressed: () {}, icon: Icon(icon)),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_cart_outlined),
+            ),
           ],
         ),
       ),

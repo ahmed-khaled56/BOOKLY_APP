@@ -45,12 +45,10 @@ class BestSellerListviewItem extends StatelessWidget {
 
               Row(
                 children: [
-                  Text("19.5 ", style: Styles.TextStyle30),
-
-                  FaIcon(FontAwesomeIcons.euroSign, size: 12),
+                  Text("19.99 €", style: Styles.TextStyle30),
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 42.0),
+                    padding: const EdgeInsets.only(left: 40.0),
                     child: FaIcon(
                       FontAwesomeIcons.solidStar,
                       size: 12,

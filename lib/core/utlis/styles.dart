@@ -17,9 +17,11 @@ abstract class Styles {
 
   static const TextStyle12 = TextStyle(
     color: Colors.grey,
-    fontFamily: kGtSectraFine,
+
     fontSize: 12,
 
     fontWeight: FontWeight.w900,
   );
+
+  static const TextStyle11 = TextStyle(color: Colors.white, fontSize: 11);
 }
