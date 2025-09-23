@@ -4,7 +4,6 @@ import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.d
 import 'package:bookly_app/features/home/presentation/view/widgets/Books_action.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Custom_appbar_details.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -51,7 +50,29 @@ class BookDetailsViewBody extends StatelessWidget {
         SizedBox(height: 8),
         BookRating(mainAxisAlignment: MainAxisAlignment.center),
         const SizedBox(height: 30),
-        BooksAction(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BooksAction(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16),
+                topLeft: Radius.circular(16),
+              ),
+              backgrounColor: Colors.white,
+              textColor: Colors.black,
+              text: "19.99€",
+            ),
+            BooksAction(
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(16),
+                topRight: Radius.circular(16),
+              ),
+              backgrounColor: Color(0xFFEF8262),
+              textColor: Colors.white,
+              text: "Free preview",
+            ),
+          ],
+        ),
       ],
     );
   }
