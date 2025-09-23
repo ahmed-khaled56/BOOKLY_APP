@@ -2,6 +2,7 @@ import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Books_action.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/Books_details_listView.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Custom_appbar_details.dart';
 import 'package:flutter/material.dart';
 
@@ -55,8 +56,8 @@ class BookDetailsViewBody extends StatelessWidget {
           children: [
             BooksAction(
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(16),
-                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(14),
+                topLeft: Radius.circular(14),
               ),
               backgrounColor: Colors.white,
               textColor: Colors.black,
@@ -64,8 +65,8 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
             BooksAction(
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(16),
-                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(14),
+                topRight: Radius.circular(14),
               ),
               backgrounColor: Color(0xFFEF8262),
               textColor: Colors.white,
@@ -73,6 +74,22 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ],
         ),
+
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50, left: 40.0),
+            child: Text(
+              'You can also like',
+              style: Styles.TextStyle12.copyWith(
+                fontSize: 11,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        BooksDetailsListview(),
       ],
     );
   }
