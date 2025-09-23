@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:bookly_app/core/utlis/styles.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Custom_appbar_details.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,27 +42,13 @@ class BookDetailsViewBody extends StatelessWidget {
 
         Text(
           'Rudyard Kipling',
-          style: Styles.TextStyle12.copyWith(fontSize: 14),
+          style: Styles.TextStyle12.copyWith(
+            fontSize: 14,
+            fontStyle: FontStyle.italic,
+          ),
         ),
         SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FaIcon(
-              FontAwesomeIcons.solidStar,
-              size: 12,
-              color: Colors.amberAccent,
-            ),
-
-            const SizedBox(width: 4),
-            Text("4.5 ", style: Styles.TextStyle15),
-            const SizedBox(width: 1),
-            Text(
-              "(23323) ",
-              style: Styles.TextStyle15.copyWith(color: Colors.grey),
-            ),
-          ],
-        ),
+        BookRating(mainAxisAlignment: MainAxisAlignment.center),
         const SizedBox(height: 30),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
