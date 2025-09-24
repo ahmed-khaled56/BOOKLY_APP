@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bookly_app/core/utlis/assets.dart';
+
+import 'package:get/get.dart';
 
 class CustomAppbarDetails extends StatelessWidget {
   const CustomAppbarDetails({super.key});
@@ -13,7 +14,12 @@ class CustomAppbarDetails extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.close)),
+            IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(Icons.close),
+            ),
             Spacer(),
             IconButton(
               onPressed: () {},
