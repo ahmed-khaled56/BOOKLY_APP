@@ -30,6 +30,7 @@ environment:
 dependencies:
   awesome: ^0.0.3
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.10.0
@@ -67,7 +68,5 @@ flutter:
     - family: GT Sectra Fine
       fonts:
         - asset: assets/fonts/GT_Sectra_Fine_Regular.ttf
-
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
