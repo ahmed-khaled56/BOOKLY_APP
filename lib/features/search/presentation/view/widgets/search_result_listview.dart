@@ -3,7 +3,6 @@ import 'package:bookly_app/features/home/presentation/view/books_details_view.da
 import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_listview_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SearchResultListview extends StatelessWidget {
   const SearchResultListview({super.key});

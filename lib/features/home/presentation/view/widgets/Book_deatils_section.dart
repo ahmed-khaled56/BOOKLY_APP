@@ -1,7 +1,4 @@
-import 'package:bookly_app/core/utlis/assets.dart';
-import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Book_detalis_image.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/book_details_info.dart';
 import 'package:flutter/material.dart';
 
