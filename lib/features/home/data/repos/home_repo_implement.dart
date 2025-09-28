@@ -10,10 +10,11 @@ class HomeRepoImplement implements HomeRepo {
   @override
   HomeRepoImplement(this.apiServisce);
   final ApiServisce apiServisce;
+  @override
   Future<Either<Failurs, List<BookModel>>> fetcNewestBooks() async {
     // TODO: implement fetchBestSellerBooks
     try {
-      var data = await apiServisce.get(endpont: kEndPoint);
+      var data = await apiServisce.get(endpont: kNewestEndPoint);
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -24,14 +25,25 @@ class HomeRepoImplement implements HomeRepo {
         return left(ServerFailur.fromDioExption(e));
       }
       return left(ServerFailur(e.toString()));
-      // TODO
     }
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failurs, List<BookModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
+  Future<Either<Failurs, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiServisce.get(endpont: kFeturedEndPoint);
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+        return right(books);
+      }
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(ServerFailur.fromDioExption(e));
+      }
+      return left(ServerFailur(e.toString()));
+    }
     throw UnimplementedError();
   }
 }
