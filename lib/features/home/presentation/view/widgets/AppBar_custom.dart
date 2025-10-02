@@ -3,7 +3,6 @@ import 'package:bookly_app/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class AppbarCustom extends StatelessWidget {
   const AppbarCustom({super.key, required this.icon});

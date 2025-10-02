@@ -9,7 +9,7 @@ import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
   final String? title;
-  final List<String>? authors;
+  final List<dynamic>? authors;
   final String? publisher;
   final String? publishedDate;
   final String? description;
@@ -52,7 +52,7 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromMap(Map<String, dynamic> data) => VolumeInfo(
     title: data['title'] as String?,
-    authors: data['authors'] as List<String>?,
+    authors: (data['authors'] as List<dynamic>?)?.cast<String>(),
     publisher: data['publisher'] as String?,
     publishedDate: data['publishedDate'] as String?,
     description: data['description'] as String?,
@@ -64,7 +64,7 @@ class VolumeInfo extends Equatable {
         : ReadingModes.fromMap(data['readingModes'] as Map<String, dynamic>),
     pageCount: data['pageCount'] as int?,
     printType: data['printType'] as String?,
-    categories: data['categories'] as List<String>?,
+    categories: (data['categories'] as List<dynamic>?)?.cast<String>(),
     maturityRating: data['maturityRating'] as String?,
     allowAnonLogging: data['allowAnonLogging'] as bool?,
     contentVersion: data['contentVersion'] as String?,

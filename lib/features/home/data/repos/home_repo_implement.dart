@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/errors/failurs.dart';
 import 'package:bookly_app/core/utlis/api_servisce.dart';
@@ -35,7 +37,9 @@ class HomeRepoImplement implements HomeRepo {
       var data = await apiServisce.get(endpont: kFeturedEndPoint);
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        books.add(BookModel.fromJson(json.encode(item)));
+
+        //books.add(BookModel.fromJson(item));
         return right(books);
       }
     } on Exception catch (e) {

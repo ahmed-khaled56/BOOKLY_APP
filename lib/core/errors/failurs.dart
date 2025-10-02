@@ -41,7 +41,7 @@ class ServerFailur extends Failurs {
   }
   factory ServerFailur.fromResponse(dynamic response, int statusCode) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailur(response['errors']['message']);
+      return ServerFailur(response['error']['message']);
     } else if (statusCode == 404) {
       return ServerFailur("Your Request not found..plse try later!!");
     } else if (statusCode == 500) {
