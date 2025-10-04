@@ -19,16 +19,15 @@ class HomeRepoImplement implements HomeRepo {
       var data = await apiServisce.get(endpont: kNewestEndPoint);
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
-        return right(books);
+        books.add(BookModel.fromJson(json.encode(item)));
       }
+      return right(books);
     } on Exception catch (e) {
       if (e is DioException) {
         return left(ServerFailur.fromDioExption(e));
       }
       return left(ServerFailur(e.toString()));
     }
-    throw UnimplementedError();
   }
 
   @override
@@ -40,14 +39,13 @@ class HomeRepoImplement implements HomeRepo {
         books.add(BookModel.fromJson(json.encode(item)));
 
         //books.add(BookModel.fromJson(item));
-        return right(books);
       }
+      return right(books);
     } on Exception catch (e) {
       if (e is DioException) {
         return left(ServerFailur.fromDioExption(e));
       }
       return left(ServerFailur(e.toString()));
     }
-    throw UnimplementedError();
   }
 }

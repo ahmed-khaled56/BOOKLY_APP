@@ -24,18 +24,6 @@ class CustomItemListview extends StatelessWidget {
               const Center(child: CircularProgressIndicator()),
         ),
       ),
-
-      // Container(
-      //   //height: 100,
-      //   decoration: BoxDecoration(
-      //     borderRadius: BorderRadius.circular(15),
-      //     color: Colors.amber,
-      //     image: DecorationImage(
-      //       fit: BoxFit.cover,
-      //       image: NetworkImage(urlImage),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
