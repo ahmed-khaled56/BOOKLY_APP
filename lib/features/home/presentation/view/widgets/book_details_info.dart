@@ -1,26 +1,32 @@
 import 'package:bookly_app/core/utlis/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Books_action.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsInfo extends StatelessWidget {
-  const BookDetailsInfo({super.key});
+  const BookDetailsInfo({super.key, required this.bookItem});
+  final BookModel bookItem;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
 
-          'The Jungle Book',
-          style: Styles.TextStyle30.copyWith(fontSize: 22),
+            bookItem.volumeInfo!.title!,
+            style: Styles.TextStyle30.copyWith(fontSize: 22),
+          ),
         ),
         SizedBox(height: 2),
 
         Text(
-          'Rudyard Kipling',
+          bookItem.volumeInfo!.authors![0],
           style: Styles.TextStyle12.copyWith(
             fontSize: 14,
             fontStyle: FontStyle.italic,
@@ -28,9 +34,16 @@ class BookDetailsInfo extends StatelessWidget {
         ),
         SizedBox(height: 8),
 
-        BookRating(mainAxisAlignment: MainAxisAlignment.center),
+        BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+          rate: bookItem.volumeInfo?.rating ?? "",
+          ratingsCount: bookItem.volumeInfo?.countRating ?? "",
+        ),
         SizedBox(height: 20),
-        BooksAction(),
+        BooksAction(
+          price: bookItem.saleInfo?.listPrice?.amount ?? "",
+          coinType: bookItem.saleInfo?.listPrice?.currencyCode ?? "",
+        ),
       ],
     );
   }

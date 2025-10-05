@@ -1,18 +1,28 @@
 import 'dart:convert';
 
+import 'package:bookly_app/features/home/data/models/book_model/price_list_model.dart';
 import 'package:equatable/equatable.dart';
 
 class SaleInfo extends Equatable {
   final String? country;
   final String? saleability;
   final bool? isEbook;
+  final PriceListModel? listPrice;
 
-  const SaleInfo({this.country, this.saleability, this.isEbook});
+  const SaleInfo({
+    this.listPrice,
+    this.country,
+    this.saleability,
+    this.isEbook,
+  });
 
   factory SaleInfo.fromMap(Map<String, dynamic> data) => SaleInfo(
     country: data['country'] as String?,
     saleability: data['saleability'] as String?,
     isEbook: data['isEbook'] as bool?,
+    listPrice: data['listPrice'] != null
+        ? PriceListModel.fromMap(data['listPrice'])
+        : null,
   );
 
   Map<String, dynamic> toMap() => {

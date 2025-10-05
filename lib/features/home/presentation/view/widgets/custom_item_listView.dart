@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomItemListview extends StatelessWidget {
-  const CustomItemListview({super.key, this.urlImage = ""});
+  const CustomItemListview({super.key, required this.urlImage});
   final String urlImage;
 
   @override
   Widget build(BuildContext context) {
+    print("image=${urlImage}");
     return SizedBox(
-      width: 120,
-      height: 60,
+      width: 90,
+      height: 70,
 
       // height: MediaQuery.of(context).size.height * .1,
       child: ClipRRect(

@@ -1,10 +1,17 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Book_deatils_section.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/Custom_appbar_details.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/also_like_listview.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({
+    super.key,
+    required this.books,
+    required this.bookItem,
+  });
+  final List<BookModel> books;
+  final BookModel bookItem;
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +20,20 @@ class BookDetailsViewBody extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
 
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomAppbarDetails(),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomAppbarDetails(),
 
-              BookDeatilsSection(),
+                BookDeatilsSection(bookItem: bookItem),
 
-              Expanded(child: SizedBox(height: 50)),
-
-              AlsoLikeListview(),
-              const SizedBox(height: 30),
-            ],
+                SizedBox(height: 50),
+                AlsoLikeListview(books: books),
+                const SizedBox(height: 50),
+              ],
+            ),
           ),
         ),
       ],

@@ -18,6 +18,8 @@ class VolumeInfo extends Equatable {
   final int? pageCount;
   final String? printType;
   final List<String>? categories;
+  final String? rating;
+  final String? countRating;
   final String? maturityRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
@@ -29,6 +31,8 @@ class VolumeInfo extends Equatable {
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
+    this.rating,
+    this.countRating,
     this.title,
     this.authors,
     this.publisher,
@@ -65,6 +69,8 @@ class VolumeInfo extends Equatable {
     pageCount: data['pageCount'] as int?,
     printType: data['printType'] as String?,
     categories: (data['categories'] as List<dynamic>?)?.cast<String>(),
+    rating: (data['averageRating'] as double?)?.toString(),
+    countRating: (data['ratingsCount'] as int?)?.toString(),
     maturityRating: data['maturityRating'] as String?,
     allowAnonLogging: data['allowAnonLogging'] as bool?,
     contentVersion: data['contentVersion'] as String?,

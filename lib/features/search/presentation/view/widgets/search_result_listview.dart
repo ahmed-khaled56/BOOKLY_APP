@@ -20,13 +20,13 @@ class SearchResultListview extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: GestureDetector(
             onTap: () {
-              Get.to(
-                () => const BooksDetailsView(),
-                transition: Transition.rightToLeft,
-                duration: kTransitionDuraion,
-              );
+              // Get.to(
+              //   () =>// const BooksDetailsView(),
+              //   transition: Transition.rightToLeft,
+              //   duration: kTransitionDuraion,
+              // );
             },
-            child: BestSellerListviewItem(),
+            // child: BestSellerListviewItem(bookmodel: ,),
           ),
         );
       },

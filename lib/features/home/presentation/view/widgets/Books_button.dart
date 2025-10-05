@@ -8,11 +8,13 @@ class BooksButton extends StatelessWidget {
     required this.borderRadius,
     required this.textColor,
     required this.text,
+    this.coinType = "",
   });
   final Color backgrounColor;
   final BorderRadiusGeometry borderRadius;
   final Color textColor;
-  final String text;
+  final String? text;
+  final String? coinType;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +30,12 @@ class BooksButton extends StatelessWidget {
         ),
 
         child: Center(
-          child: Text(
-            text,
-            style: Styles.TextStyle12.copyWith(color: textColor),
-          ),
+          child: text != null
+              ? Text(
+                  "${text}${coinType}",
+                  style: Styles.TextStyle12.copyWith(color: textColor),
+                )
+              : Container(),
         ),
       ),
     );
