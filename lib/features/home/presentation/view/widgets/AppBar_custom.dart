@@ -23,6 +23,7 @@ class AppbarCustom extends StatelessWidget {
               onPressed: () {
                 Get.to(
                   () => SearchView(),
+
                   transition: Transition.rightToLeft,
                   duration: kTransitionDuraion,
                 );

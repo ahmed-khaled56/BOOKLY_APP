@@ -4,7 +4,7 @@ import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_l
 import 'package:bookly_app/features/home/presentation/view/widgets/books_listview.dart';
 import 'package:flutter/material.dart';
 
-var books;
+//ar books;
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
