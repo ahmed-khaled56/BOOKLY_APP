@@ -3,6 +3,7 @@ import 'package:bookly_app/core/utlis/service_locator.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_implement.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_cubit_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/splash/presentation/views/splashView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImplement>()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              SimilarBooksCubit(getIt.get<HomeRepoImplement>()),
         ),
       ],
       child: GetMaterialApp(

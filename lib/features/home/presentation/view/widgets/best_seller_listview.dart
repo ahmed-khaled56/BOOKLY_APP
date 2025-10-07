@@ -1,5 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/widgets/errors_widget/text_error.dart';
+import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
@@ -25,7 +26,12 @@ class BestSellerListview extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: GestureDetector(
-                  onTap: () {
+                  onTap: () async {
+                    await BlocProvider.of<SimilarBooksCubit>(
+                      context,
+                    ).fetchSimilarBooks(
+                      category: state.books[index].volumeInfo?.title ?? "",
+                    );
                     Get.to(
                       () => BooksDetailsView(bookslist: state.books),
                       arguments: state.books[index],

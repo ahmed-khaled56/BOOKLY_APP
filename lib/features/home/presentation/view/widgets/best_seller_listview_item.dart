@@ -42,6 +42,7 @@ class BestSellerListviewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .3,
                     child: Text(
+                      textAlign: TextAlign.center,
                       bookmodel.volumeInfo!.title!,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,

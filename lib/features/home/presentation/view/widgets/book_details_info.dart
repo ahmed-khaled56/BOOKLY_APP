@@ -16,6 +16,7 @@ class BookDetailsInfo extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
+            textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
 
@@ -26,6 +27,7 @@ class BookDetailsInfo extends StatelessWidget {
         SizedBox(height: 2),
 
         Text(
+          textAlign: TextAlign.center,
           bookItem.volumeInfo!.authors![0],
           style: Styles.TextStyle12.copyWith(
             fontSize: 14,
@@ -41,6 +43,7 @@ class BookDetailsInfo extends StatelessWidget {
         ),
         SizedBox(height: 20),
         BooksAction(
+          url: bookItem.volumeInfo?.previewLink ?? "",
           price: bookItem.saleInfo?.listPrice?.amount ?? "Free",
           coinType: bookItem.saleInfo?.listPrice?.currencyCode ?? "",
         ),

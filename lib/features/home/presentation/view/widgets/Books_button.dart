@@ -9,6 +9,7 @@ class BooksButton extends StatelessWidget {
     required this.textColor,
     required this.text,
     this.coinType = "",
+    this.onPressed,
   });
   final Color backgrounColor;
   final BorderRadiusGeometry borderRadius;
@@ -16,13 +17,14 @@ class BooksButton extends StatelessWidget {
   final String? text;
   final String? coinType;
 
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 130,
       height: 35,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
 
         style: TextButton.styleFrom(
           backgroundColor: backgrounColor,
