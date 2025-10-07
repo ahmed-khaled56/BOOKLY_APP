@@ -8,10 +8,10 @@ class CustomItemListview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("image=${urlImage}");
+    print("image=$urlImage");
     return SizedBox(
       width: 90,
-      height: 70,
+      height: 50,
 
       // height: MediaQuery.of(context).size.height * .1,
       child: ClipRRect(

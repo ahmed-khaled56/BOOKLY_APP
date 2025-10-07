@@ -30,7 +30,7 @@ class BookRating extends StatelessWidget {
         const SizedBox(width: 1),
         ratingsCount != ""
             ? Text(
-                "(${ratingsCount})",
+                "($ratingsCount)",
                 style: Styles.TextStyle15.copyWith(color: Colors.grey),
               )
             : SizedBox(),

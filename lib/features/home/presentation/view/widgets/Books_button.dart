@@ -32,7 +32,7 @@ class BooksButton extends StatelessWidget {
         child: Center(
           child: text != null
               ? Text(
-                  "${text}${coinType}",
+                  "$text$coinType",
                   style: Styles.TextStyle12.copyWith(color: textColor),
                 )
               : Container(),

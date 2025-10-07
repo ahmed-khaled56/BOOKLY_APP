@@ -36,12 +36,12 @@ class BookDetailsInfo extends StatelessWidget {
 
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
-          rate: bookItem.volumeInfo?.rating ?? "",
-          ratingsCount: bookItem.volumeInfo?.countRating ?? "",
+          rate: bookItem.volumeInfo?.rating ?? "0",
+          ratingsCount: bookItem.volumeInfo?.countRating ?? "0",
         ),
         SizedBox(height: 20),
         BooksAction(
-          price: bookItem.saleInfo?.listPrice?.amount ?? "",
+          price: bookItem.saleInfo?.listPrice?.amount ?? "Free",
           coinType: bookItem.saleInfo?.listPrice?.currencyCode ?? "",
         ),
       ],

@@ -2,7 +2,6 @@ import 'package:bookly_app/features/home/data/models/book_model/book_model.dart'
 import 'package:bookly_app/features/home/presentation/view/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class BooksDetailsView extends StatelessWidget {
   static const id = "BooksDetailsView";

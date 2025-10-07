@@ -1,12 +1,10 @@
 import 'package:bookly_app/core/widgets/errors_widget/text_error.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_cubit_cubit.dart';
 import 'package:bookly_app/features/home/presentation/view/books_details_view.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_item_listView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class BooksListview extends StatelessWidget {
   const BooksListview({super.key});

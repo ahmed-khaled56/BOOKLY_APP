@@ -31,6 +31,7 @@ class BestSellerListviewItem extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(width: 10),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 15),
@@ -56,16 +57,10 @@ class BestSellerListviewItem extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: Styles.TextStyle12,
                         )
-                      : const SizedBox.shrink(),
+                      : const SizedBox(
+                          child: Text("None", style: Styles.TextStyle12),
+                        ),
 
-                  // bookmodel.volumeInfo?.authors?[0] != ""
-                  //     ? Text(
-                  //         "${bookmodel.volumeInfo?.authors?[1]}",
-                  //         maxLines: 2,
-                  //         overflow: TextOverflow.ellipsis,
-                  //         style: Styles.TextStyle12,
-                  //       )
-                  //     : Text(""),
                   const SizedBox(height: 3),
                   Row(
                     children: [
@@ -77,12 +72,13 @@ class BestSellerListviewItem extends StatelessWidget {
                                 fontFamily: kGtSectraFine,
                               ),
                             )
-                          : const SizedBox(width: 0),
+                          : const SizedBox(child: Text('free'), width: 85),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 55),
                         child: BookRating(
-                          rate: bookmodel.volumeInfo?.rating ?? "",
-                          ratingsCount: bookmodel.volumeInfo?.countRating ?? "",
+                          rate: bookmodel.volumeInfo?.rating ?? "0",
+                          ratingsCount:
+                              bookmodel.volumeInfo?.countRating ?? "0",
                         ),
                       ),
                     ],
